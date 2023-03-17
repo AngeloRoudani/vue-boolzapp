@@ -56,10 +56,10 @@
                     <!--Card degli amici con cui chattare-->
 
                     <div class="friends">
-                        <div class="friend_card d-flex s_between align_center friend_active">
-                            <img class="avatar" src="img/avatar_1.jpg" alt="michele">
+                        <div v-for="(element, index) in contacts"  class="friend_card d-flex s_between align_center friend_active">
+                            <img class="avatar" :src="element.avatar" :alt="element.name">
                             <div class="info d-inline-block">
-                                <div class="name f-small">Michele</div>
+                                <div class="name f-small">{{element.name}}</div>
                                 <div class="last_message f-extrasmall">Ultimo messaggio inviato</div>
                             </div>
                             <div class="hour f-extrasmall d-inline-block">12:00</div>
