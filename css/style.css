@@ -149,6 +149,7 @@ body {
 
 .friend_card {
     height: 60px;
+    cursor: pointer;
 }
 
 .friend_card img {
@@ -183,6 +184,7 @@ body {
 .main_middle {
     height: calc(90vh - 100px);
     background-image: url('../img/mine.jpg');
+    overflow: scroll;
 }
 
 /*spazio dei messaggi*/
@@ -191,6 +193,7 @@ body {
     margin: auto;
     padding-top: 50px;
     flex-direction: column;
+    overflow-y: scroll;
 }
 
 .sent {
@@ -198,6 +201,7 @@ body {
     background-color: #ffffff ;
     border-radius: 10px;
     padding: 15px;
+    margin-top: 10px;
 }
 
 .received {
@@ -206,6 +210,7 @@ body {
     border-radius: 10px;
     padding: 15px;
     align-self: flex-end;
+    margin-top: 10px;
 }
 
 

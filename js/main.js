@@ -3,7 +3,8 @@ const { createApp } = Vue
     createApp({
         data() {
             return {
-
+                activeChat: 0,
+                activeFriend: 'friendActive',
                 contacts: [
                     {
                         name: 'Michele',
@@ -168,5 +169,14 @@ const { createApp } = Vue
                     }
                 ]
         }
+    },
+    methods: {
+        clickChat (activeChat) {
+            return this.activeFriend = activeChat;
+        },
+
+            
+        
+        
     }
 }).mount('#app')
