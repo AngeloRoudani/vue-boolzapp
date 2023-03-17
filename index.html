@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>BoolzApp</title>
+</head>
+<body>
+    
+    <div class="head_color">
+
+
+
+
+        <div id="app">
+            <div class="container">
+
+                <aside class="side_bar">
+                    <div class="user d-flex s_between align_center">
+                        <div class="user_avatar">
+                            <img class="avatar" src="img/avatar_me.jpg" alt="Angelo">
+                            <span class="f-small">Angelo</span>
+                        </div>
+                        <div class="user_icon icon">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    
+                        
+                    </div>
+                    
+                    <div class="notifications d-flex align_center">
+                        <div class="bell avatar d-inline-block"><i class="fa-solid fa-bell-slash"></i></div>
+                        <div class="d-inline-block">
+                            <div class="f-small ">Ricevi notifiche di nuovi messaggi</div>
+                            <div class="f-extrasmall"><a href="#">Attiva notifiche desktop</a></div>
+                        </div>
+                    </div>
+
+                     <!--barra di ricerca della side bar-->
+
+                    <div class="search">
+                        <div class="search_container">
+                            <div class="lens d-inline-block"><i class="fa-solid fa-magnifying-glass icon"></i></div>
+                            <input class="search_input d-inline-block" type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </div>
+
+                    <!--Card degli amici con cui chattare-->
+
+                    <div class="friends">
+                        <div class="friend_card d-flex s_between align_center friend_active">
+                            <img class="avatar" src="img/avatar_1.jpg" alt="michele">
+                            <div class="info d-inline-block">
+                                <div class="name f-small">Michele</div>
+                                <div class="last_message f-extrasmall">Ultimo messaggio inviato</div>
+                            </div>
+                            <div class="hour f-extrasmall d-inline-block">12:00</div>
+                        </div>
+                    </div>
+
+
+                </aside>
+
+
+
+                <main class="main_chat">
+                    <div class="main_top"></div>
+                    <div class="main_top"></div>
+                    <div class="main_top">
+                        <input type="text">
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
