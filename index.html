@@ -17,9 +17,11 @@
 
 
         <div id="app">
-            <div class="container">
+            <div class="container d-flex">
 
-                <aside class="side_bar">
+                <aside class="side_bar d-inline-block">
+
+                     <!--User-->
                     <div class="user d-flex s_between align_center">
                         <div class="user_avatar">
                             <img class="avatar" src="img/avatar_me.jpg" alt="Angelo">
@@ -31,9 +33,9 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     
-                        
                     </div>
-                    
+
+                     <!--Spam notifiche-->
                     <div class="notifications d-flex align_center">
                         <div class="bell avatar d-inline-block"><i class="fa-solid fa-bell-slash"></i></div>
                         <div class="d-inline-block">
@@ -69,11 +71,29 @@
 
 
 
-                <main class="main_chat">
-                    <div class="main_top"></div>
-                    <div class="main_top"></div>
+                <main class="main_chat d-inline-block">
                     <div class="main_top">
-                        <input type="text">
+                        <div class="user d-flex s_between align_center">
+                            <img class="avatar" src="img/avatar_1.jpg" alt="michele">
+                            <div class="info d-inline-block">
+                                <div class="name f-small">Michele</div>
+                                <div class="last_message f-extrasmall">Ultimo accesso oggi alle 12:00</div>
+                            </div>
+                            <div class="user_icon icon">
+                                <i class="fa-solid fa-magnifying-glass icon"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        
+                        </div>
+                    </div>
+
+
+                    <div class="main_middle"></div>
+                    <div class="main_footer d-flex s_between align_center">
+                        <div class="text_center chat_icon"><i class="fa-regular fa-face-smile icon"></i></div>
+                        <input class="chat_bar f-small" type="text" placeholder="Scrivi un messaggio">
+                        <div class="text_center chat_icon"><i class="fa-solid fa-microphone icon"></i></div>
                     </div>
 
                 </main>
