@@ -184,6 +184,33 @@ body {
     background-image: url('../img/mine.jpg');
 }
 
+/*spazio dei messaggi*/
+.container_messages {
+    width: 80%;
+    margin: auto;
+    padding-top: 50px;
+    flex-direction: column;
+}
+
+.sent {
+    width: 40%;
+    background-color: #ffffff ;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.received {
+    width: 40%;
+    background-color: #d5f9ba;
+    border-radius: 10px;
+    padding: 15px;
+    align-self: flex-end;
+}
+
+
+
+
+/*foote chat*/
 .main_footer {
     background-color: #f3eeea;
     height: 50px;
