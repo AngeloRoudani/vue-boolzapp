@@ -3,7 +3,10 @@ const { createApp } = Vue
     createApp({
         data() {
             return {
-                activeFriend: [],
+                activeChat: 0,
+                activeFriend: "",
+                newText:"",
+                friendChat: 'friend_active',
                 contacts: [
                     {
                         name: 'Michele',
@@ -174,13 +177,25 @@ const { createApp } = Vue
         
             if (this.contacts[index].visible == false) {
                 this.contacts[index].visible = true;
-                return this.activeFriend.push(this.contacts[index].messages)
+                this.activeFriend = this.contacts[index].messages;
+                this.activeChat = index;
             } else {
-                this.contacts[index].visible = false;
-                return this.activeFriend = [];
+                this.contacts.visible = false;
+                this.activeFriend = [];
             }
             
         },
+        textPush () {
+            const newTextObject = {
+                date: '10/01/2020',
+                message: this.newText,
+                status: 'sent'
+            }
+            this.activeFriend.push(newTextObject);
+            this.newText = "";
+        
+        }
+
 
             
         

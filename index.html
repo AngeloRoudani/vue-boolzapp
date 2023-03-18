@@ -56,7 +56,7 @@
                     <!--Card degli amici con cui chattare-->
 
                     <div class="friends">
-                        <div v-for="(element, index) in contacts" class="friend_card d-flex s_between align_center" @click ="clickChat(index)">
+                        <div v-for="(element, index) in contacts" class="friend_card d-flex s_between align_center" :class="(activeChat == index)?friendChat:''" @click ="clickChat(index)">
 
                             <img class="avatar" :src="element.avatar" :alt="element.name">
                             <div class="info d-inline-block">
@@ -77,9 +77,9 @@
                 <main class="main_chat d-inline-block">
                     <div class="main_top">
                         <div class="user d-flex s_between align_center ">
-                            <img class="avatar" src="img/avatar_1.jpg" alt="michele">
+                            <img class="avatar" :src="contacts[activeChat].avatar" :alt="contacts[activeChat].name">
                             <div class="info d-inline-block">
-                                <div class="name f-small">Michele</div>
+                                <div class="name f-small">{{contacts[activeChat].name}}</div>
                                 <div class="last_message f-extrasmall">Ultimo accesso oggi alle 12:00</div>
                             </div>
                             <div class="user_icon icon">
@@ -96,25 +96,21 @@
 
                     <div class="main_middle">
                         <div class="container_messages d-flex">
-                            
-                        
-                            <div v-for="elementSent in activeFriend" class="length_chat">
-                                <div v-for="newSent in elementSent">
+                          
+                                <div v-for="newSent in activeFriend" class="length_chat">
                                     <div v-if="newSent.status == 'sent'" class="sent">
                                     {{newSent.message}}
                                     <div class="f-extrasmall text_right p-top-1">{{newSent.date}}</div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div v-for="elementReceived in activeFriend" class="length_chat">
-                                <div v-for="newReceived in elementReceived">
+                            
+                                <div v-for="newReceived in activeFriend" class="length_chat">
                                     <div v-if="newReceived.status == 'received'" class="received">
                                     {{newReceived.message}}
                                     <div class="f-extrasmall text_right p-top-1">{{newReceived.date}}</div>
                                     </div>
                                 </div>
-                            </div>
+                            
 
                         </div>
                     </div>
@@ -122,7 +118,7 @@
 
                     <div class="main_footer d-flex s_between align_center">
                         <div class="text_center chat_icon"><i class="fa-regular fa-face-smile icon"></i></div>
-                        <input class="chat_bar f-small" type="text" placeholder="Scrivi un messaggio">
+                        <input class="chat_bar f-small" type="text" placeholder="Scrivi un messaggio" v-model="newText" @keyup.enter="textPush">
                         <div class="text_center chat_icon"><i class="fa-solid fa-microphone icon"></i></div>
                     </div>
 
