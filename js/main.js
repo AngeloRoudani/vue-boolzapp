@@ -8,11 +8,12 @@ const { createApp } = Vue
                 newText:"",
                 answerClock: "",
                 friendChat: 'friend_active',
+                search: "",
                 contacts: [
                     {
                         name: 'Michele',
                         avatar: './img/avatar_1.jpg',
-                        visible: false,
+                        visible: true,
                         messages: [
                                 {
                                 date: '10/01/2020 15:30:55',
@@ -34,7 +35,7 @@ const { createApp } = Vue
                     {
                         name: 'Fabio',
                         avatar: './img/avatar_2.jpg',
-                        visible: false,
+                        visible: true,
                         messages: [
                                 {
                                 date: '20/03/2020 16:30:00',
@@ -56,7 +57,7 @@ const { createApp } = Vue
                     {
                         name: 'Samuele',
                         avatar: './img/avatar_3.jpg',
-                        visible: false,
+                        visible: true,
                         messages: [
                                 {
                                 date: '28/03/2020 10:10:40',
@@ -78,7 +79,7 @@ const { createApp } = Vue
                     {
                         name: 'Alessandro B.',
                         avatar: './img/avatar_4.jpg',
-                        visible: false,
+                        visible: true,
                         messages: [
                                 {
                                 date: '10/01/2020 15:30:55',
@@ -95,7 +96,7 @@ const { createApp } = Vue
                     {
                         name: 'Alessandro L.',
                         avatar: './img/avatar_5.jpg',
-                        visible: false,
+                        visible: true,
                         messages: [
                                 {
                                 date: '10/01/2020 15:30:55',
@@ -112,7 +113,7 @@ const { createApp } = Vue
                     {
                         name: 'Claudia',
                         avatar: './img/avatar_5.jpg',
-                        visible: false,
+                        visible: true,
                         messages: [
                                 {
                                 date: '10/01/2020 15:30:55',
@@ -134,7 +135,7 @@ const { createApp } = Vue
                     {
                         name: 'Federico',
                         avatar: './img/avatar_7.jpg',
-                        visible: false,
+                        visible: true,
                         messages: [
                                 {
                                 date: '10/01/2020 15:30:55',
@@ -151,7 +152,7 @@ const { createApp } = Vue
                     {
                         name: 'Davide',
                         avatar: './img/avatar_8.jpg',
-                        visible: false,
+                        visible: true,
                         messages: [
                                 {
                                 date: '10/01/2020 15:30:55',
@@ -176,12 +177,12 @@ const { createApp } = Vue
     methods: {
         clickChat (index) {
         
-            if (this.contacts[index].visible == false) {
-                this.contacts[index].visible = true;
+            if (this.contacts[index].visible == true) {
+                this.contacts[index].visible = false;
                 this.activeFriend = this.contacts[index].messages;
                 this.activeChat = index;
             } else {
-                this.contacts.visible = false;
+                this.contacts.visible = true;
                 this.activeFriend = [];
             }
             
@@ -206,7 +207,36 @@ const { createApp } = Vue
             this.activeFriend.push(newAnswerObject);
 
         },
+        searchBarFriends () {
+            let searchIndex = [];
+            let nameArray = [];
+            
+            
+            console.log(searchIndex);
+            console.log(nameArray);
 
+            for (let i = 0; i <= this.search.length - 1; i++) {
+                searchIndex.push(this.search[i]);
+            }
+
+            for (let i = 0; i <= this.contacts.length - 1; i++) {
+                
+                const {name} = this.contacts[i];
+                nameArray.push({name});
+            }
+
+            for (let i = 0; i <= this.contacts.length - 1; i++) {
+
+                if (nameArray[i].name.includes(searchIndex)) {
+                    this.contacts[i].visible = true;
+                } else {
+                    this.contacts[i].visible = false;
+                }
+            }
+        }
+            
+            
+        
 
 
             

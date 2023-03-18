@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +50,7 @@
                     <div class="search">
                         <div class="search_container">
                             <div class="lens d-inline-block"><i class="fa-solid fa-magnifying-glass icon"></i></div>
-                            <input class="search_input d-inline-block" type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input class="search_input d-inline-block" type="text" placeholder="Cerca o inizia una nuova chat" v-model="search" @keyup="searchBarFriends">
                         </div>
                     </div>
 
@@ -57,13 +58,14 @@
 
                     <div class="friends">
                         <div v-for="(element, index) in contacts" class="friend_card d-flex s_between align_center" :class="(activeChat == index)?friendChat:''" @click ="clickChat(index)">
-
+                            <div v-if="contacts[index].visible == true">
                             <img class="avatar" :src="element.avatar" :alt="element.name">
                             <div class="info d-inline-block">
                                 <div class="name f-small">{{element.name}}</div>
                                 <div class="last_message f-extrasmall">Ultimo messaggio inviato</div>
                             </div>
                             <div class="hour f-extrasmall d-inline-block">12:00</div>
+                        </div>
                         </div>
                     </div>
 
