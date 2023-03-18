@@ -62,6 +62,14 @@ body {
     text-align: center;
 }
 
+.text_right {
+    text-align: right;
+}
+
+.p-top-1 {
+    padding-top: 1rem;
+}
+
 
 /*stile dell' app*/
 
@@ -188,30 +196,37 @@ body {
 }
 
 /*spazio dei messaggi*/
+
 .container_messages {
-    width: 80%;
+    width: 70%;
     margin: auto;
     padding-top: 50px;
     flex-direction: column;
     overflow-y: scroll;
 }
 
-.sent {
-    width: 40%;
+.received {
+    width: calc(100% / 2.5);
     background-color: #ffffff ;
     border-radius: 10px;
     padding: 15px;
     margin-top: 10px;
 }
 
-.received {
-    width: 40%;
+.sent {
+    width: calc(100% / 2.5);
     background-color: #d5f9ba;
     border-radius: 10px;
     padding: 15px;
-    align-self: flex-end;
+    margin-left: 60%;
     margin-top: 10px;
 }
+
+.length_chat {
+    width: 100%;
+}
+
+
 
 
 
