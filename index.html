@@ -56,8 +56,7 @@
                     <!--Card degli amici con cui chattare-->
 
                     <div class="friends">
-                        <div v-for="(element, index) in contacts" 
-                         class="friend_card d-flex s_between align_center" @click ="clickChat(index)">
+                        <div v-for="(element, index) in contacts" class="friend_card d-flex s_between align_center" @click ="clickChat(index)">
 
                             <img class="avatar" :src="element.avatar" :alt="element.name">
                             <div class="info d-inline-block">
@@ -97,20 +96,24 @@
 
                     <div class="main_middle">
                         <div class="container_messages d-flex">
-
-                            <div v-for="(element, index) in contacts" class="received">
-                                <div v-for="(message, index) in element.messages">
-                                    <div v-if="message.status == 'received'">{{message.message}}{{message.date}}</div>
+                            
+                            
+                                <div v-for="elementSent in activeFriend" >
+                                    <div v-for="newSent in elementSent">
+                                        <div v-if="newSent.status == 'sent'" class="sent">
+                                        {{newSent.message}}{{newSent.date}}
+                                        </div>
+                                    </div>
                                 </div>
-                                
 
-                            </div>
-                            <div v-for="(element, index) in contacts" class="sent">
-                                <div v-for="(message, index) in element.messages">
-                                    <div v-if="message.status == 'sent'">{{message.message}}{{message.date}}</div>
+                                <div v-for="elementReceived in activeFriend">
+                                    <div v-for="newReceived in elementReceived">
+                                        <div v-if="newReceived.status == 'received'" class="received">
+                                        {{newReceived.message}}{{newReceived.date}}
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-
+                            
                         </div>
                     </div>
 

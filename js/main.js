@@ -3,13 +3,12 @@ const { createApp } = Vue
     createApp({
         data() {
             return {
-                activeChat: 0,
-                activeFriend: 'friendActive',
+                activeFriend: [],
                 contacts: [
                     {
                         name: 'Michele',
                         avatar: './img/avatar_1.jpg',
-                        visible: true,
+                        visible: false,
                         messages: [
                                 {
                                 date: '10/01/2020 15:30:55',
@@ -31,7 +30,7 @@ const { createApp } = Vue
                     {
                         name: 'Fabio',
                         avatar: './img/avatar_2.jpg',
-                        visible: true,
+                        visible: false,
                         messages: [
                                 {
                                 date: '20/03/2020 16:30:00',
@@ -53,7 +52,7 @@ const { createApp } = Vue
                     {
                         name: 'Samuele',
                         avatar: './img/avatar_3.jpg',
-                        visible: true,
+                        visible: false,
                         messages: [
                                 {
                                 date: '28/03/2020 10:10:40',
@@ -75,7 +74,7 @@ const { createApp } = Vue
                     {
                         name: 'Alessandro B.',
                         avatar: './img/avatar_4.jpg',
-                        visible: true,
+                        visible: false,
                         messages: [
                                 {
                                 date: '10/01/2020 15:30:55',
@@ -92,7 +91,7 @@ const { createApp } = Vue
                     {
                         name: 'Alessandro L.',
                         avatar: './img/avatar_5.jpg',
-                        visible: true,
+                        visible: false,
                         messages: [
                                 {
                                 date: '10/01/2020 15:30:55',
@@ -109,7 +108,7 @@ const { createApp } = Vue
                     {
                         name: 'Claudia',
                         avatar: './img/avatar_5.jpg',
-                        visible: true,
+                        visible: false,
                         messages: [
                                 {
                                 date: '10/01/2020 15:30:55',
@@ -131,7 +130,7 @@ const { createApp } = Vue
                     {
                         name: 'Federico',
                         avatar: './img/avatar_7.jpg',
-                        visible: true,
+                        visible: false,
                         messages: [
                                 {
                                 date: '10/01/2020 15:30:55',
@@ -148,7 +147,7 @@ const { createApp } = Vue
                     {
                         name: 'Davide',
                         avatar: './img/avatar_8.jpg',
-                        visible: true,
+                        visible: false,
                         messages: [
                                 {
                                 date: '10/01/2020 15:30:55',
@@ -171,8 +170,16 @@ const { createApp } = Vue
         }
     },
     methods: {
-        clickChat (activeChat) {
-            return this.activeFriend = activeChat;
+        clickChat (index) {
+        
+            if (this.contacts[index].visible == false) {
+                this.contacts[index].visible = true;
+                return this.activeFriend.push(this.contacts[index].messages)
+            } else {
+                this.contacts[index].visible = false;
+                return this.activeFriend = [];
+            }
+            
         },
 
             
