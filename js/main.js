@@ -6,6 +6,7 @@ const { createApp } = Vue
                 activeChat: 0,
                 activeFriend: "",
                 newText:"",
+                answerClock: "",
                 friendChat: 'friend_active',
                 contacts: [
                     {
@@ -191,10 +192,21 @@ const { createApp } = Vue
                 message: this.newText,
                 status: 'sent'
             }
+            this.answerClock = setTimeout(this.autoAnswer, 1000)
             this.activeFriend.push(newTextObject);
             this.newText = "";
         
-        }
+        },
+        autoAnswer () {
+            const newAnswerObject = {
+                date: '10/01/2020',
+                message: 'ok',
+                status: 'received'
+            }
+            this.activeFriend.push(newAnswerObject);
+
+        },
+
 
 
             
