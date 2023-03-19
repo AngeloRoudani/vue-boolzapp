@@ -70,6 +70,10 @@ body {
     padding-top: 1rem;
 }
 
+.w-100 {
+    width: 100%;
+}
+
 
 /*stile dell' app*/
 
@@ -211,6 +215,9 @@ body {
     border-radius: 10px;
     padding: 15px;
     margin-top: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
 }
 
 .sent {
@@ -220,15 +227,45 @@ body {
     padding: 15px;
     margin-left: 60%;
     margin-top: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.message {
+    width: 80%;
+}
+
+.delete_message {
+    width: 20%;
+    color: lightgrey;
+    cursor: pointer;
+}
+
+.pop_up {
+    width: 150px;
+    background-color: #fff;
+    position: absolute;
+    top: 40px;
+    right: 5px;
+    z-index: 99;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px  #888888;
+    cursor: pointer;
+}
+
+.pop_up div {
+    padding: 5px;
+}
+
+.pop_up div:hover {
+    background-color: rgb(6, 114, 238);
 }
 
 .length_chat {
     width: 100%;
 }
-
-
-
-
 
 
 /*foote chat*/

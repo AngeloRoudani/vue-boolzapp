@@ -99,17 +99,31 @@
                     <div class="main_middle">
                         <div class="container_messages d-flex">
                           
-                                <div v-for="newSent in activeFriend" class="length_chat">
-                                    <div v-if="newSent.status == 'sent'" class="sent">
-                                    {{newSent.message}}
-                                    <div class="f-extrasmall text_right p-top-1">{{newSent.date}}</div>
+                                <div v-for="(newSent,index) in activeFriend" class="length_chat">
+                                    <div v-if="newSent.status == 'sent'" class="sent d-flex">
+                                    <span class="message">{{newSent.message}}</span>
+                                    <span class="delete_message text_right">
+                                        <i class="fa-solid fa-chevron-down" @click="messageMenu(index)"></i>
+                                    </span>
+                                    <div v-show="newSent.menu == true" class="pop_up" >
+                                        <div>Message info</div>
+                                        <div @click="eraseMessage(index)">Delete message</div>
+                                    </div>
+                                    <div class="f-extrasmall text_right p-top-1 w-100">{{newSent.date}}</div>
                                     </div>
                                 </div>
                             
-                                <div v-for="newReceived in activeFriend" class="length_chat">
-                                    <div v-if="newReceived.status == 'received'" class="received">
-                                    {{newReceived.message}}
-                                    <div class="f-extrasmall text_right p-top-1">{{newReceived.date}}</div>
+                                <div v-for="(newReceived, index) in activeFriend" class="length_chat">
+                                    <div v-if="newReceived.status == 'received'" class="received d-flex">
+                                        <span class="message">{{newReceived.message}}</span>
+                                        <span class="delete_message text_right">
+                                            <i class="fa-solid fa-chevron-down" @click="messageMenu(index)"></i>
+                                        </span>
+                                        <div v-show="newReceived.menu == true" class="pop_up">
+                                            <div>Message info</div>
+                                            <div @click="eraseMessage(index)">Delete message</div>
+                                        </div>
+                                        <div class="f-extrasmall text_right p-top-1 w-100">{{newReceived.date}}</div>
                                     </div>
                                 </div>
                             
