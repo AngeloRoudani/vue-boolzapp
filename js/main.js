@@ -203,11 +203,11 @@ const { createApp } = Vue
 
         },
         searchBarFriends () {
+            this.friendChat = '';
             let searchIndex = [];
             let nameArray = [];
             
-            
-            console.log(searchIndex);
+            console.log(searchIndex)
             console.log(nameArray);
 
             for (let i = 0; i <= this.search.length - 1; i++) {
@@ -215,27 +215,22 @@ const { createApp } = Vue
             }
 
             for (let i = 0; i <= this.contacts.length - 1; i++) {
-                
                 const {name} = this.contacts[i];
                 nameArray.push({name});
             }
 
             for (let i = 0; i <= this.contacts.length - 1; i++) {
+                const newName = nameArray[i].name.split('');
+                console.log(newName);
 
-                if (nameArray[i].name.includes(searchIndex)) {
+                if (newName.some( n => searchIndex.includes(n))) {
                     this.contacts[i].visible = true;
                 } else {
                     this.contacts[i].visible = false;
                 }
             }
         }
-            
-            
-        
-
-
-            
-        
+      
         
     }
 }).mount('#app')
