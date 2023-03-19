@@ -176,15 +176,10 @@ const { createApp } = Vue
     },
     methods: {
         clickChat (index) {
-        
-            if (this.contacts[index].visible == true) {
-                this.contacts[index].visible = false;
-                this.activeFriend = this.contacts[index].messages;
-                this.activeChat = index;
-            } else {
-                this.contacts.visible = true;
-                this.activeFriend = [];
-            }
+            
+            this.contacts[index].messages.push(this.activeFriend)
+            this.activeFriend = this.contacts[index].messages;
+            this.activeChat = index;
             
         },
         textPush () {
