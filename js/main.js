@@ -205,7 +205,6 @@ const { createApp } = Vue
             this.contacts[index].messages.push(this.activeFriend)
             this.activeFriend = this.contacts[index].messages;
             this.activeChat = index;
-            
         },
         textPush () {
             const newTextObject = {
@@ -230,32 +229,18 @@ const { createApp } = Vue
 
         },
         searchBarFriends () {
-            this.friendChat = '';
-            let searchIndex = [];
-            let nameArray = [];
             
-            console.log(searchIndex)
-            console.log(nameArray);
-
-            for (let i = 0; i <= this.search.length - 1; i++) {
-                searchIndex.push(this.search[i]);
-            }
-
             for (let i = 0; i <= this.contacts.length - 1; i++) {
-                const {name} = this.contacts[i];
-                nameArray.push({name});
-            }
-
-            for (let i = 0; i <= this.contacts.length - 1; i++) {
-                const newName = nameArray[i].name.split('');
-                console.log(newName);
-
-                if (newName.some( n => searchIndex.includes(n))) {
+            
+                if (this.contacts[i].name.includes(this.search)) {
                     this.contacts[i].visible = true;
                 } else {
                     this.contacts[i].visible = false;
                 }
+            
             }
+            
+
         },
         messageMenu (index) {
         
