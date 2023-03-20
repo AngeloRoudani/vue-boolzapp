@@ -174,7 +174,7 @@ body {
 
 .hour {
     color: grey;
-    align-self: flex-start; 
+    align-self: flex-end; 
     margin-right: 5px;
 }
 

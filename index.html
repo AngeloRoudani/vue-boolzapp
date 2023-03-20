@@ -62,10 +62,12 @@
                             <img class="avatar" :src="element.avatar" :alt="element.name">
                             <div class="info d-inline-block">
                                 <div class="name f-small">{{element.name}}</div>
-                                <div class="last_message f-extrasmall">Ultimo messaggio inviato</div>
+                                <div v-for="(last, index) in lastMessage" class="last_message f-extrasmall">
+                                    <div v-if="last[index].lastMessage == lastMessage.length - 1" >{{last.lastMessage}}</div>
+                                </div>
                             </div>
-                            <div class="hour f-extrasmall d-inline-block">12:00</div>
                         </div>
+                        <div class="hour f-extrasmall d-inline-block">12:00</div>
                         </div>
                     </div>
 
@@ -143,7 +145,7 @@
         </div>
     </div>
 
-    
+    <script src=" https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js "></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>

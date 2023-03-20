@@ -1,14 +1,17 @@
+const DateTime = luxon.DateTime
 const { createApp } = Vue
 
     createApp({
         data() {
             return {
+                date: DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS),
                 activeChat: 0,
                 activeFriend: "",
                 newText:"",
                 answerClock: "",
                 friendChat: 'friend_active',
                 search: "",
+                lastMessage: [],
                 contacts: [
                     {
                         name: 'Michele',
@@ -267,8 +270,30 @@ const { createApp } = Vue
         eraseMessage (index) {
             this.activeFriend.splice(index, 1);
         
-        }
-      
-        
+        },
+        lastSentMessage () {
+            let lastMessageArray = [];
+            
+
+            for (let i = 0; i < this.contacts.length; i++) {
+                const {messages} = this.contacts[i];
+                console.log({messages});
+                
+            }
+            console.log(this.lastMessageArray);
+            
+            for (let i = 0; i < lastMessageArray.length; i++) {
+                if ( lastMessageArray[i].status == 'sent') {
+                    this.lastMessage.push(lastMessageArray[i]);
+                }
+            }
+            
+            console.log(this.lastMessageArray);
+        },
+
+
+    },
+    mounted () {
+        this.lastSentMessage ();
     }
 }).mount('#app')
