@@ -271,29 +271,12 @@ const { createApp } = Vue
             this.activeFriend.splice(index, 1);
         
         },
-        lastSentMessage () {
-            let lastMessageArray = [];
-            
+        getLastMessage (element) {
 
-            for (let i = 0; i < this.contacts.length; i++) {
-                const {messages} = this.contacts[i];
-                console.log({messages});
-                
-            }
-            console.log(this.lastMessageArray);
-            
-            for (let i = 0; i < lastMessageArray.length; i++) {
-                if ( lastMessageArray[i].status == 'sent') {
-                    this.lastMessage.push(lastMessageArray[i]);
-                }
-            }
-            
-            console.log(this.lastMessageArray);
+            const messages = element.messages;
+            return messages[messages.length -1].message; 
         },
 
 
     },
-    mounted () {
-        this.lastSentMessage ();
-    }
 }).mount('#app')

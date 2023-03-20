@@ -62,9 +62,9 @@
                             <img class="avatar" :src="element.avatar" :alt="element.name">
                             <div class="info d-inline-block">
                                 <div class="name f-small">{{element.name}}</div>
-                                <div v-for="(last, index) in lastMessage" class="last_message f-extrasmall">
-                                    <div v-if="last[index].lastMessage == lastMessage.length - 1" >{{last.lastMessage}}</div>
-                                </div>
+                                
+                                <div>{{getLastMessage(element)}}</div>
+                               
                             </div>
                         </div>
                         <div class="hour f-extrasmall d-inline-block">12:00</div>
