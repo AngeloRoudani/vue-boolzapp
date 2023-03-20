@@ -239,6 +239,10 @@ const { createApp } = Vue
                 }
             
             }
+
+            if (this.search == "") {
+                this.contacts.visible = true;
+            }
             
 
         },
