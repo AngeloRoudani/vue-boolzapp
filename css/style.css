@@ -101,12 +101,14 @@ body {
     vertical-align: top;
     padding-top: 10px;
     display: inline-block;
+    margin-left: 5px;
 
 }
 
 .user_avatar {
-    width: 100px;
-    padding: 5px;
+    width: 120px;
+    padding-top: 5px;
+    padding-left: 10px;
 }
 
 .user_icon i {
