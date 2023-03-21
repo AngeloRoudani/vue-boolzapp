@@ -57,7 +57,7 @@
                     <!--Card degli amici con cui chattare-->
 
                     <div class="friends">
-                        <div v-for="(element, index) in contacts" v-show="contacts[index].visible == true" class="friend_card">
+                        <div v-for="(element, index) in contacts" v-show="contacts[index].visible == true" class="friend_card" @click="clickChat(index)">
                             <img class="avatar" :src="element.avatar" :alt="element.name">
                             <div class="info d-inline-block">
                                 <div class="name f-small">{{element.name}}</div>

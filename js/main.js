@@ -208,7 +208,7 @@ const { createApp } = Vue
         },
         textPush () {
             const newTextObject = {
-                date: '10/01/2020',
+                date: this.date,
                 message: this.newText,
                 status: 'sent',
                 menu: false
@@ -220,7 +220,7 @@ const { createApp } = Vue
         },
         autoAnswer () {
             const newAnswerObject = {
-                date: '10/01/2020',
+                date: this.date,
                 message: 'ok',
                 status: 'received',
                 menu: false
