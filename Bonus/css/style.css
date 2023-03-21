@@ -52,6 +52,7 @@ body {
 
 .icon {
     color: #b1b1b1 ;
+    cursor: pointer;
 }
 
 .friend_active {

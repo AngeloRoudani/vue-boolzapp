@@ -123,8 +123,9 @@
 
                     <div class="main_footer d-flex s_between align_center">
                         <div class="text_center chat_icon"><i class="fa-regular fa-face-smile icon"></i></div>
-                        <input class="chat_bar f-small" type="text" placeholder="Scrivi un messaggio" v-model="newText" @keyup.enter="textPush">
-                        <div class="text_center chat_icon"><i class="fa-solid fa-microphone icon"></i></div>
+                        <input class="chat_bar f-small" type="text" placeholder="Scrivi un messaggio" v-model="newText" @keyup="textAreaEmpty"  @keyup.enter="textPush">
+                        <div v-show="newTextSpace == false" class="text_center chat_icon"><i class="fa-solid fa-microphone icon"></i></div>
+                        <div v-show="newTextSpace == true" class="text_center chat_icon"><i class="fa-solid fa-paper-plane icon" @click="textPush"></i></div>
                     </div>
 
                 </main>

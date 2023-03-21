@@ -8,7 +8,7 @@ const { createApp } = Vue
                     name: 'Angelo',
                     avatar: './img/avatar_me.jpg',
                 },
-                card: "friend_card",
+                newTextSpace: false,
                 date: DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS),
                 activeChat: 0,
                 activeFriend: "",
@@ -222,6 +222,7 @@ const { createApp } = Vue
             this.answerClock = setTimeout(this.autoAnswer, 1000)
             this.activeFriend.push(newTextObject);
             this.newText = "";
+            this.newTextSpace = false;
         
         },
         autoAnswer () {
@@ -275,8 +276,14 @@ const { createApp } = Vue
         getLastDate (element) {
             const messages = element.messages;
             return messages[messages.length - 1].date;
+        },
+        textAreaEmpty () {
+            
+            return this.newTextSpace = true;
+            
         }
 
 
-    },
+    }
+    
 }).mount('#app')
