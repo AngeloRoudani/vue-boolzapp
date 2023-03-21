@@ -157,15 +157,18 @@ body {
 
 .info {
     flex-grow: 1;
+    align-self: center;
 }
 
 .friend_card {
     height: 60px;
     cursor: pointer;
+    border-bottom: solid 1px #e2e0e0;
 }
 
 .friend_card img {
     margin: 0 10px;
+    align-self: center;
 }
 
 .last_message {

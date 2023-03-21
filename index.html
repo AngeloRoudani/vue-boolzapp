@@ -57,7 +57,7 @@
                     <!--Card degli amici con cui chattare-->
 
                     <div class="friends">
-                        <div v-for="(element, index) in contacts" v-show="contacts[index].visible == true" class="friend_card" @click="clickChat(index)">
+                        <div v-for="(element, index) in contacts" v-show="contacts[index].visible == true" class="friend_card d-flex" @click="clickChat(index)">
                             <img class="avatar" :src="element.avatar" :alt="element.name">
                             <div class="info d-inline-block">
                                 <div class="name f-small">{{element.name}}</div>
@@ -65,6 +65,7 @@
                                     {{getLastMessage(element)}}
                                 </div>
                             </div>
+                            <div class="hour f-extrasmall d-inline-block text_right">{{getLastDate(element)}}</div>
                         </div>
                         
                     </div>
@@ -99,33 +100,20 @@
                     <div class="main_middle">
                         <div class="container_messages d-flex">
                           
-                            <div v-for="(newSent,index) in activeFriend" class="length_chat">
-                                <div v-if="newSent.status == 'sent'" class="sent d-flex">
-                                <span class="message">{{newSent.message}}</span>
+                            <div v-for="(newMessage, index) in activeFriend" class="length_chat">
+                                <div class="d-flex" :class="newMessage.status">
+                                <span class="message">{{newMessage.message}}</span>
                                 <span class="delete_message text_right">
                                     <i class="fa-solid fa-chevron-down" @click="messageMenu(index)"></i>
                                 </span>
-                                <div v-show="newSent.menu == true" class="pop_up" >
+                                <div v-show="newMessage.menu == true" class="pop_up" >
                                     <div>Message info</div>
                                     <div @click="eraseMessage(index)">Delete message</div>
                                 </div>
-                                <div class="f-extrasmall text_right p-top-1 w-100">{{newSent.date}}</div>
+                                <div class="f-extrasmall text_right p-top-1 w-100">{{newMessage.date}}</div>
                                 </div>
                             </div>
-                        
-                            <div v-for="(newReceived, index) in activeFriend" class="length_chat">
-                                <div v-if="newReceived.status == 'received'" class="received d-flex">
-                                    <span class="message">{{newReceived.message}}</span>
-                                    <span class="delete_message text_right">
-                                        <i class="fa-solid fa-chevron-down" @click="messageMenu(index)"></i>
-                                    </span>
-                                    <div v-show="newReceived.menu == true" class="pop_up">
-                                        <div>Message info</div>
-                                        <div @click="eraseMessage(index)">Delete message</div>
-                                    </div>
-                                    <div class="f-extrasmall text_right p-top-1 w-100">{{newReceived.date}}</div>
-                                </div>
-                            </div>
+
                             
 
                         </div>

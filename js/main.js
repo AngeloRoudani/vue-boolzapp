@@ -265,6 +265,10 @@ const { createApp } = Vue
             const messages = element.messages;
             return messages[messages.length -1].message; 
         },
+        getLastDate (element) {
+            const messages = element.messages;
+            return messages[messages.length - 1].date;
+        }
 
 
     },
