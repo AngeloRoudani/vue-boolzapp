@@ -278,9 +278,11 @@ const { createApp } = Vue
             return messages[messages.length - 1].date;
         },
         textAreaEmpty () {
-            
-            return this.newTextSpace = true;
-            
+            if (this.newText == "") {
+                this.newTextSpace = false;
+            } else {
+                this.newTextSpace = true;
+            }
         }
 
 
