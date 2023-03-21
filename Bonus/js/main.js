@@ -292,16 +292,20 @@ const { createApp } = Vue
                 "dio salvi la regina",
                 "è leviosa non leviosaaa"
             ]
-            let newPhrase = "";
-            let randomPhrase = Math.floor(Math.random() * fraseAuto.length);
+            let newPhrase = []
+            
+            let randomPhrase = Math.floor(Math.random() * fraseAuto.length - 1);
             console.log (randomPhrase);
-            return newPhrase = fraseAuto.filter((element, index) => {
-                if(element[index] == randomPhrase) {
-                    newPhrase = element
+
+            for(let i = 0; i <= fraseAuto.length - 1; i++){
+                if(i == randomPhrase) {
+                    newPhrase.push(fraseAuto[i]);
                 }
-                
-            })
-             
+            }
+           
+            console.log(newPhrase)
+            
+             return newPhrase.toString();
         }
 
 
