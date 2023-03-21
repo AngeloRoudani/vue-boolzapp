@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +57,7 @@
 
                     <div class="friends">
                         <div v-for="(element, index) in contacts">
-                            <div v-show="contacts[index].visible == true"  class="friend_card d-flex" :class="(activeChat == index)?friendChat:''" @click="clickChat(index)">
+                            <div v-if="contacts[index].visible == true" class="friend_card d-flex" :class="(activeChat == index)?friendChat:''" @click="clickChat(index)">
                                 <img class="avatar" :src="element.avatar" :alt="element.name">
                                 <div class="info d-inline-block">
                                     <div class="name f-small">{{element.name}}</div>

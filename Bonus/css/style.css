@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*background dell'App*/
+body {
+    background-color: #d8dbd5;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.head_color {
+    height: 15vh;
+    background-color: #009688;
+    padding-top: 30px;
+}
+
+/*Utilities*/
+
+.d-inline-block {
+    display: inline-block;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.s_between {
+    justify-content: space-between;
+}
+
+.align_center {
+    align-items: center ;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.f-small {
+    font-size: 14px;
+}
+
+.f-extrasmall {
+    font-size: 12px;
+}
+
+.icon {
+    color: #b1b1b1 ;
+}
+
+.friend_active {
+    background-color: #e9ebebbe;
+}
+
+.text_center {
+    text-align: center;
+}
+
+.text_right {
+    text-align: right;
+}
+
+.p-top-1 {
+    padding-top: 1rem;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+
+/*stile dell' app*/
+
+.container {
+    max-width: 80%;
+    min-height: 90vh;
+    margin: auto;
+}
+
+/*sidebar*/
+
+.side_bar {
+    width: calc(100% / 3);
+    height: 90vh;
+    background-color: white;
+}
+
+.user {
+    height: 50px;
+    background-color: #eaeaea;
+}
+
+.user span {
+    vertical-align: top;
+    padding-top: 10px;
+    display: inline-block;
+    margin-left: 5px;
+
+}
+
+.user_avatar {
+    width: 120px;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+.user_icon i {
+    margin-right: 15px;
+}
+
+.notifications {
+    height: 60px;
+    background-color: #8edafc;
+}
+
+.bell {
+    margin: 0 10px;
+    background-color: white;
+    color:#8edafc;
+} 
+
+.notifications i {
+    padding: 12px 10px 10px 10px;
+}
+
+.search {
+    width: 100%;
+    height: 30px;
+    padding: 4px;
+    background-color: #f7f7f7;
+}
+
+.search_container {
+    
+    background-color: white;
+    border: solid 1px rgb(224, 224, 224);
+    border-radius: 2px;
+}
+
+.lens {
+    width: 10%;
+    text-align: center;
+    border-right: solid 1px lightgrey;
+}
+
+.search_input {
+    height: 100%;
+    width: 90%;
+    padding-left: 3px;
+    border: none;
+}
+
+.info {
+    flex-grow: 1;
+    align-self: center;
+}
+
+.friends {
+    height: calc(90vh - 140px);
+    overflow-y: scroll;
+}
+
+.friend_card {
+    height: 60px;
+    cursor: pointer;
+    border-bottom: solid 1px #e2e0e0;
+}
+
+.friend_card img {
+    margin: 0 10px;
+    align-self: center;
+}
+
+.last_message {
+    color: grey;
+}
+
+.hour {
+    color: grey;
+    align-self: flex-end; 
+    margin-right: 5px;
+}
+
+/*Main Chat*/
+
+.main_chat {
+    width: calc((100% / 3 )* 2);
+    height: 90vh;
+}
+
+.main_top {
+    border-left: solid 1px lightgrey;
+}
+
+.main_top img {
+    margin: 0 10px;
+}
+
+.main_middle {
+    height: calc(90vh - 100px);
+    background-image: url('../img/mine.jpg');
+    overflow: scroll;
+}
+
+/*spazio dei messaggi*/
+
+.container_messages {
+    width: 70%;
+    margin: auto;
+    padding-top: 50px;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.received {
+    width: calc(100% / 2.5);
+    background-color: #ffffff ;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.sent {
+    width: calc(100% / 2.5);
+    background-color: #d5f9ba;
+    border-radius: 10px;
+    padding: 15px;
+    margin-left: 60%;
+    margin-top: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.message {
+    width: 80%;
+}
+
+.delete_message {
+    width: 20%;
+    color: lightgrey;
+    cursor: pointer;
+}
+
+.pop_up {
+    width: 150px;
+    background-color: #fff;
+    position: absolute;
+    top: 40px;
+    right: 5px;
+    z-index: 99;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px  #888888;
+    cursor: pointer;
+}
+
+.pop_up div {
+    padding: 5px;
+}
+
+.pop_up div:hover {
+    background-color: rgb(6, 114, 238);
+}
+
+.length_chat {
+    width: 100%;
+}
+
+
+/*foote chat*/
+.main_footer {
+    background-color: #f3eeea;
+    height: 50px;
+}
+
+.chat_bar {
+    width: 100%;
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.chat_icon {
+    width: 10%;
+    font-size: 20px;
+}
+
