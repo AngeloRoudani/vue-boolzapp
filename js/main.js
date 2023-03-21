@@ -4,6 +4,10 @@ const { createApp } = Vue
     createApp({
         data() {
             return {
+                mySelf: {
+                    name: 'Angelo',
+                    avatar: './img/avatar_me.jpg',
+                },
                 date: DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS),
                 activeChat: 0,
                 activeFriend: "",
@@ -11,13 +15,11 @@ const { createApp } = Vue
                 answerClock: "",
                 friendChat: 'friend_active',
                 search: "",
-                lastMessage: [],
                 contacts: [
                     {
                         name: 'Michele',
                         avatar: './img/avatar_1.jpg',
                         visible: true,
-                        menu: false,
                         messages: [
                                 {
                                 date: '10/01/2020 15:30:55',
@@ -201,10 +203,13 @@ const { createApp } = Vue
     },
     methods: {
         clickChat (index) {
-            
-            this.contacts[index].messages.push(this.activeFriend)
-            this.activeFriend = this.contacts[index].messages;
-            this.activeChat = index;
+            if (this.activeChat == index) {
+                this.activeFriend = "";
+            } else {
+                this.activeFriend = this.contacts[index].messages;
+                this.activeChat = index;
+            }
+           
         },
         textPush () {
             const newTextObject = {

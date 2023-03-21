@@ -25,8 +25,8 @@
                      <!--User-->
                     <div class="user d-flex s_between align_center">
                         <div class="user_avatar">
-                            <img class="avatar" src="img/avatar_me.jpg" alt="Angelo">
-                            <span class="f-small">Angelo</span>
+                            <img class="avatar" :src="mySelf.avatar" alt="mySelf.name">
+                            <span class="f-small">{{mySelf.name}}</span>
                         </div>
                         <div class="user_icon icon">
                             <i class="fa-solid fa-circle-notch"></i>
@@ -57,7 +57,7 @@
                     <!--Card degli amici con cui chattare-->
 
                     <div class="friends">
-                        <div v-for="(element, index) in contacts" v-show="contacts[index].visible == true" class="friend_card d-flex" @click="clickChat(index)">
+                        <div v-for="(element, index) in contacts" class="friend_card d-flex" :class="(activeChat == index)?friendChat:''" @click="clickChat(index)">
                             <img class="avatar" :src="element.avatar" :alt="element.name">
                             <div class="info d-inline-block">
                                 <div class="name f-small">{{element.name}}</div>
