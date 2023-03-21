@@ -89,7 +89,6 @@ body {
     width: calc(100% / 3);
     height: 90vh;
     background-color: white;
-    overflow-y: scroll;
 }
 
 .user {
@@ -160,6 +159,11 @@ body {
 .info {
     flex-grow: 1;
     align-self: center;
+}
+
+.friends {
+    height: calc(90vh - 140px);
+    overflow-y: scroll;
 }
 
 .friend_card {
