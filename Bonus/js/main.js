@@ -228,7 +228,7 @@ const { createApp } = Vue
         autoAnswer () {
             const newAnswerObject = {
                 date: this.date,
-                message: 'ok',
+                message: this.fraseRandom(),
                 status: 'received',
                 menu: false
             }
@@ -283,6 +283,25 @@ const { createApp } = Vue
             } else {
                 this.newTextSpace = true;
             }
+        },
+        fraseRandom () {
+            const fraseAuto = [
+                "che la forza sia con te",
+                "Mi piace l'odore del napalm di mattina",
+                "vivi la tua vita un quarto di miglio alla volta",
+                "dio salvi la regina",
+                "è leviosa non leviosaaa"
+            ]
+            let newPhrase = "";
+            let randomPhrase = Math.floor(Math.random() * fraseAuto.length);
+            console.log (randomPhrase);
+            return newPhrase = fraseAuto.filter((element, index) => {
+                if(element[index] == randomPhrase) {
+                    newPhrase = element
+                }
+                
+            })
+             
         }
 
 
